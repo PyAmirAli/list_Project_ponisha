@@ -13,8 +13,6 @@ print("")
 api_id = input('api_id--->')
 print("")
 api_hash = input("api_hash--->")
-
-
 print("Proxy information")
 print("")
 server = input('server -->')
@@ -24,8 +22,6 @@ client = TelegramClient(
     'session_name', api_id, api_hash,
     connection=connection.ConnectionTcpMTProxyRandomizedIntermediate,
     proxy=(server, port, secret))
-
-    
 client.start()
 try:
     @client.on(events.NewMessage)
@@ -45,7 +41,3 @@ except:
     pass
 print("conect")
 client.run_until_disconnected()
-
-
-
-
